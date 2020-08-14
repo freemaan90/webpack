@@ -1,0 +1,15 @@
+{
+  "name": "webpack-4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Frederico Zanoni Ruiz <fredericozanoni@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^4.44.1"
+  }
+}
