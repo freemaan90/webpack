@@ -1,10 +1,19 @@
 const path = require('path');
 
 module.exports = {
-	entry: './src/index.js',
-	mode: 'development',
+	entry: {
+		home: path.resolve(__dirname, 'src', 'js', 'index.js'),
+		precios: path.resolve(__dirname, 'src', 'js', 'precios.js'),
+		contacto: path.resolve(__dirname, 'src', 'js', 'contacto.js')
+	},
 	output: {
-		path: path.resolve('src', 'dist'),
-		filename: 'bundle.js'
+		path: path.resolve(__dirname, 'src', 'dist'),
+		filename: 'js/[name].js'
 	}
+	// module:{
+	// 	rules:[
+	// 		test: /\.css$/,
+	// 		use: 'css-loader'
+	// 	]
+	// }
 };
