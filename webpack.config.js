@@ -7,7 +7,7 @@ module.exports = {
 		home: path.resolve('./src', 'js', 'index.js')
 	},
 	output: {
-		path: path.resolve('src', 'dist'),
+		path: path.resolve('dist'),
 		filename: 'js/[name].js'
 	},
 	mode: 'development',
