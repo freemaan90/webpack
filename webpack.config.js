@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
 	entry: {
@@ -15,21 +16,19 @@ module.exports = {
 		rules: [
 			{
 				test: /\.css$/,
-				use: [
-					{
-						loader: MiniCssExtractPlugin.loader
-					},
-					'css-loader'
-				]
+				use: [ 'style-loader', 'css-loader' ]
 			}
 		]
 	},
 	plugins: [
+		new webpack.HotModuleReplacementPlugin(),
 		new HtmlWebpackPlugin({
 			title: 'Mi Primera Pagina con WebPack'
-		}),
-		new MiniCssExtractPlugin({
-			filename: 'css/[name].css'
 		})
-	]
+	],
+	devServer: {
+		hot: true,
+		open: true,
+		port: 9000
+	}
 };

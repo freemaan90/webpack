@@ -1,3 +1,8 @@
 import '../css/styles.css';
-
-document.body.innerHTML = 'Hola mundo desde webpack';
+import text from './text';
+text();
+if (module.hot) {
+	module.hot.accept('./text.js', function() {
+		text();
+	});
+}
