@@ -1,3 +1,3 @@
-import '../../loader-css/styles.css';
+import '../css/styles.css';
 
-console.log('Hola mundo desde index');
+document.body.innerHTML = 'Hola mundo desde webpack';

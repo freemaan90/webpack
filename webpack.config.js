@@ -2,18 +2,19 @@ const path = require('path');
 
 module.exports = {
 	entry: {
-		home: path.resolve(__dirname, 'src', 'js', 'index.js'),
-		precios: path.resolve(__dirname, 'src', 'js', 'precios.js'),
-		contacto: path.resolve(__dirname, 'src', 'js', 'contacto.js')
+		home: path.resolve('./src', 'js', 'index.js')
 	},
 	output: {
-		path: path.resolve(__dirname, 'src', 'dist'),
+		path: path.resolve('src', 'dist'),
 		filename: 'js/[name].js'
+	},
+	mode: 'development',
+	module: {
+		rules: [
+			{
+				test: /\.css$/,
+				use: [ 'style-loader', 'css-loader' ]
+			}
+		]
 	}
-	// module:{
-	// 	rules:[
-	// 		test: /\.css$/,
-	// 		use: 'css-loader'
-	// 	]
-	// }
 };
